@@ -25,3 +25,14 @@ def home(request):
     }],
         }
     return render(request,'render/home.html',context)
+
+def myprofile(request):
+    context = {
+        "Myprofile":{
+            "name":"Aarti Sharma",
+            "branch":"Electronics and Communication Engineering",
+            "course":"B.Tech",
+            "passout_year":"2018"
+        }
+    }
+    return render(request,'render/myprofile.html',context)

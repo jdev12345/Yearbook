@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={% static 'css/myprofile.css' %}>
+    <title>My Profile</title>
+</head>
+<body>
+    <div class='myprofilefull'>
+        <div class='myprofilebody'>
+            <div class='MyProfileRight'>
+                <div class='MyProfile_Left'>
+                    <div class='main'>    
+                        <div class='Logo_myself'>
+                            <img class="profile" alt="profile" src={% static 'images/profile_photo.png' %} />
+                            <img class="bioLogo" alt="bioLogo" src={% static 'images/profile_icon.png' %} />
+                        </div>
+                        <div class='name'>{{Myprofile.name}}</div>
+                        <div class='info'>{{Myprofile.branch}}, {{Myprofile.course}}, {{Myprofile.passout_year}}</div>
+                        <div class='logos'>
+                            <a href={Myprofile.insta_handle}>
+                                <img class="linkdin" alt="linkdin" src={% static 'images/Linkdin.png' %}/>
+                            </a>
+                            <a href={Myprofile.insta_handle}>
+                                <img class="instagram" alt="instagram" src={% static 'images/Instagram.png' %} />
+                            </a>
+                        </div>
+                        <div class='bio'>
+                            {{Myprofile.bio}}
+                        </div>
+                    </div>
+                    <div class='main_question'>        
+                        <div class='hello'>
+                            <!-- {{Myprofile.questions.map((data, idx)=>{
+                                return( -->
+                                    <div>
+                                        <div class='q_num'>
+                                            <!-- {{ data.ques }} -->
+                                        </div>
+                                        <!-- {ans===idx ?( -->
+                                            <!-- <div class='ans_change'>
+                                                <textarea  class='textarea_ans'></textarea>
+                                                <div class='ansSubmit_button'>
+                                                    <img alt='ans_submit' class='ans_submit' src={% static 'images/answer.png' %}}/>
+                                                </div>
+                                            </div> -->
+                                        <!-- ): ( -->
+                                        <div class='ans'>
+                                            <img class='ans_logo' alt='ans' src={% static 'images/ans_logo.png' %} /><br/>
+                                            <!-- {data.ans}} -->
+                                        </div>
+                                        <!-- )}} -->
+                                    </div>
+                        </div>     
+                    </div>
+                </div>
+                    <MyProfileTestimonials/>
+            </div>
+        </div>
+        <div class='edit_profile'>
+            <Popup />
+        </div>
+    </div>
+</body>
+</html>
