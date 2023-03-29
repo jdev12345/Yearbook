@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={% static 'css/navbar.css' %}>
+    <title>Login</title>
+</head>
+
+<script>
+    const userclick = () => {
+        const userbox = document.getElementById('nav-hamburg2');
+        if(userbox.style.display=='block'){
+            userbox.style.display=='none';
+        }
+        else{
+            userbox.style.display=='block'
+        }
+
+        const smallnav = document.getElementById('nav-hamburg');
+        smallnav.style.display=='none';
+    }
+    const menuclick = () => {
+        const userbox = document.getElementById('nav-hamburg2');
+        const smallnav = document.getElementById('nav-hamburg');
+        if(smallnav.style.display=='block'){
+            smallnav.style.display=='none';
+        }
+        else{
+            smallnav.style.display=='block'
+        }
+
+        userbox.style.display=='none';
+    }
+</script>
+
+    <!-- const [openMenu, setOpenMenu] = useState(false);
+    const [userClick, setUserClick] = useState(false); -->
+<body>
+        <div class="navbar">
+            <div class="nav-images">
+                <img src={% static 'images/sail.svg' %} alt="SAIL" class="nav-sail"/>
+                <img src={% static 'images/yearbook.svg' %} alt="YEARBOOK" class="nav-yearbook"/>
+            </div>
+            <div class="nav-links">
+                <a href="/home">Home</Link>
+                <a href="/testimonials">Testimonials</Link>
+                <a href="/polls">Polls</Link>
+                <a href="/leaderboard">Leaderboard</Link>
+            </div>
+
+            <div class="nav-hamburg" id="nav-hamburg">
+                <ul>
+                    <li><a href="/home">Home</Link></li>
+                    <li><a href="/testimonials">Testimonials</Link></li>
+                    <li><a href="/polls">Polls</Link></li>
+                    <li><a href="/leaderboard">Leaderboard</Link></li>
+                </ul>
+            </div>
+                            
+            <div class="nav-search-cont">
+                <input type="text" class='nav-search-box' placeholder='Search for friend'/>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="nav-search-icon">
+                <path d="M7.33333 12.6667C10.2789 12.6667 12.6667 10.2789 12.6667 7.33333C12.6667 4.38781 10.2789 2 7.33333 2C4.38781 2 2 4.38781 2 7.33333C2 10.2789 4.38781 12.6667 7.33333 12.6667Z" stroke="#64748B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M13.9996 13.9996L11.0996 11.0996" stroke="#64748B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <img src={% static 'images/bell.svg' %} alt="bell" class="nav-bell" />
+            <div class='profile_nav'>
+                <img src={% static 'images/userImg.svg' %} alt="USER" class="nav-user-img" onclick='userclick()'/>
+                <img src={% static 'images/down.svg' %} alt="" class='down_ham' onclick='userclick()'/>
+            </div>
+            <div class="nav-hamburg2" id="nav-hamburg2">
+                <ul>
+                    <li><a href="/myprofile">My Profile</Link></li>
+                    <li><a href="#">Hidden Testimonials</Link></li>
+                    <li><a href="/">Log Out</Link></li>
+                </ul>
+            </div>
+            
+            <img src={% static 'images/menu.svg' %} alt="" class="nav-menu" onclick="menuclick()"  />
+        </div>
+    </body>
+</html>
