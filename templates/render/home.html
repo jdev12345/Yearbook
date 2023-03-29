@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={% static 'css/home.css' %}>
+
+    <title>Home</title>
+</head>
+<body>
+    <div class="homepage">
+        <Navbar />
+        <img src={% static 'images/camerabg.png' %} alt="CamImg" class="camera-img" />
+        <a href="">
+          <div class="search">YEARBOOK 2022 &nbsp; &#128279;</div>
+        </a>
+        <div class="announcement">
+          <h2>Announcement</h2>
+          <div class="para">
+            {% for i in announcements %}
+                <div class="databody">
+                  {{ forloop.counter }}. 
+                    {{i.body}}
+                    {% if i.important %} 
+                        <img src={% static 'images/megaphoneIcon.svg' %} alt="" class="megaphoneicon" />
+                    {% endif %}
+                </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+</body>
+</html>
